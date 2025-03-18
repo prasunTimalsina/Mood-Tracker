@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mood Tracker</title>
+  </head>
+  <body>
+    <head>
+      <h1 class="heading">Mood Tracker</h1>
+    </head>
+    <div class="input-container" ">
+      <h3>What are you feeling today?</h3>
+      <div class="input-mood">
+        <div class="moods">
+          <div class="mood">😊</div>
+          <div class="mood">🥲</div>
+          <div class="mood">😐</div>
+          <div class="mood">🤩</div>
+          <div class="mood">😠</div>
+          <div class="mood">🥱</div>
+          <div class="selected-mood-box"></div>
+        </div>
+      </div>
+      <div class="input-note">
+        <h3>Wanna Add Some note?👀</h3>
+        <input class="text-box note-input" type="text" />
+      </div>
+      <button class="btn btn-add">Add</button>
+    </div>
+    <div class="show-mood-container " style="display: none">
+      <div class="emoji">😂</div>
+      <div class="note">I am happy today!</div>
+      <div class="date">Wednesday, Aug 19, 2025</div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
