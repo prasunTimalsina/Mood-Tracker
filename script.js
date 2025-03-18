@@ -50,11 +50,6 @@ const state = {
       mood: "😀",
       note: "Back to feeling happy!",
     },
-    {
-      date: "2025-03-18",
-      mood: "😀",
-      note: "Back to feeling happy!",
-    },
   ],
 };
 const days = [
@@ -115,6 +110,7 @@ const validateInputs = () => {
 
 const displayData = (date) => {
   //get data based on date
+  console.log(state.moods);
   console.log(date);
   const mood = getMood(date);
 
@@ -206,7 +202,14 @@ function formatDate(date) {
 
   return `${year}-${month}-${day}`;
 }
-const init = () => {};
+const init = () => {
+  const currentDate = formatedDate(new Date());
+  if (getMood(currentDate)) {
+    displayData(currentDate);
+  } else {
+    displayInputs();
+  }
+};
 /////events/////
 moodsEl.forEach((mood) => {
   mood.addEventListener("click", () => {
@@ -222,10 +225,13 @@ addMoodBtn.addEventListener("click", () => {
 
   const selectedMood = selectedMoodBoxEl.textContent;
   const note = noteInputEl.value;
-  state.moods.push({ formatedDate, selectedMood, note });
+  state.moods.push({ date: formatedDate, mood: selectedMood, note });
   //clearing inputs
   selectedMoodBoxEl.textContent = "";
   noteInputEl.value = "";
+
+  //show data
+  displayData(formatedDate);
 });
 
 //event to next and prev in calendar
