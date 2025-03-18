@@ -181,3 +181,21 @@ body {
   font-weight: bold;
   color: oklch(0.373 0.034 259.733);
 }
+
+.lower-body {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.btn-search {
+  width: 100px;
+}

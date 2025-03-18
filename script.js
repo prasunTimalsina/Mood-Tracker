@@ -8,6 +8,8 @@ const displayEmojiConEl = document.querySelector(".show-mood-container .emoji");
 const displayNoteConEl = document.querySelector(".show-mood-container .note");
 const displayDateConEl = document.querySelector(".show-mood-container .date");
 const inputContainerEl = document.querySelector(".input-container");
+const searchInputEl = document.querySelector(".search-input-box");
+const searchBtn = document.querySelector(".btn-search");
 ///Calendar elements
 const daysTag = document.querySelector(".days"),
   currentDate = document.querySelector(".current-date"),
@@ -252,4 +254,17 @@ prevNextIcon.forEach((icon) => {
     }
     renderCalendar(); // calling renderCalendar function
   });
+});
+
+//event on search btn
+searchBtn.addEventListener("click", () => {
+  const date = searchInputEl.value;
+  const mood = getMood(date);
+  if (!mood) {
+    alert("Invalid Date or the data for the date may be not filled.");
+    searchInputEl.value = "";
+    return;
+  }
+  displayData(date);
+  searchInputEl.value = "";
 });
