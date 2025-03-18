@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./calendarStyle.css" />
     <title>Mood Tracker</title>
   </head>
   <body>
@@ -34,6 +35,30 @@
       <div class="note">I am happy today!</div>
       <div class="date">Wednesday, Aug 19, 2025</div>
     </div>
+
+   <!--  Calendar -->
+   <div class="calendar-wrapper">
+    <header>
+      <p class="current-date"></p>
+      <div class="icons">
+        <span id="prev" class="material-symbols-rounded"><</span>
+        <span id="next" class="material-symbols-rounded">></span>
+      </div>
+    </header>
+    <div class="calendar">
+      <ul class="weeks">
+        <li>Sun</li>
+        <li>Mon</li>
+        <li>Tue</li>
+        <li>Wed</li>
+        <li>Thu</li>
+        <li>Fri</li>
+        <li>Sat</li>
+      </ul>
+      <ul class="days"></ul>
+    </div>
+  </div>
   </body>
   <script src="script.js"></script>
+  
 </html>
