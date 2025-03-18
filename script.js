@@ -17,7 +17,7 @@ const daysTag = document.querySelector(".days"),
 /////variable/////
 const state = {
   moods: [
-    {
+    /* {
       date: "2025-03-11",
       mood: "😊",
       note: "Feeling great today!",
@@ -51,7 +51,7 @@ const state = {
       date: "2025-03-17",
       mood: "😀",
       note: "Back to feeling happy!",
-    },
+    }, */
   ],
 };
 const days = [
@@ -84,12 +84,7 @@ let date = new Date(),
   currDate = date.getDate();
 
 /////functions/////
-//adding mood
-const addMood = (mood, note) => {
-  const date = Date.now().toLocaleString();
-  state.moods.push({ date, mood, note });
-  console.log(state.moods);
-};
+
 //function to search mood based on date
 const getMood = (date) => {
   const index = state.moods.findIndex((mood) => mood.date === date);
@@ -205,13 +200,19 @@ function formatDate(date) {
   return `${year}-${month}-${day}`;
 }
 const init = () => {
-  const currentDate = formatedDate(new Date());
+  //loading data from local storage
+  const parsedData = JSON.parse(localStorage.getItem("moods"));
+  if (parsedData) {
+    state.moods = parsedData;
+  }
+  const currentDate = formatDate(new Date());
   if (getMood(currentDate)) {
     displayData(currentDate);
   } else {
     displayInputs();
   }
 };
+init();
 /////events/////
 moodsEl.forEach((mood) => {
   mood.addEventListener("click", () => {
@@ -228,6 +229,8 @@ addMoodBtn.addEventListener("click", () => {
   const selectedMood = selectedMoodBoxEl.textContent;
   const note = noteInputEl.value;
   state.moods.push({ date: formatedDate, mood: selectedMood, note });
+  //persist data
+  localStorage.setItem("moods", JSON.stringify(state.moods));
   //clearing inputs
   selectedMoodBoxEl.textContent = "";
   noteInputEl.value = "";

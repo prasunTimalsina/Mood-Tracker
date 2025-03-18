@@ -92,7 +92,7 @@ header .current-date {
   transform: translate(-50%, -50%);
 }
 .days li.active::before {
-  background: #9b59b6;
+  background: oklch(0.637 0.237 25.331);
 }
 .days li:not(.active):hover::before {
   background: #f2f2f2;
