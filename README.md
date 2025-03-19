@@ -20,9 +20,13 @@ A simple web application to track and visualize your daily moods using HTML, CSS
 
 ## Screenshots 📸
 
-### Add Mood Interface
+### Interface
 
 ![Add Mood Screen](./Screenshots/Demo.png)
+
+### Mood View
+
+![Add Mood Screen](./Screenshots/Mood%20View.png)
 
 ## How to Use 🚀
 
@@ -37,7 +41,7 @@ A simple web application to track and visualize your daily moods using HTML, CSS
 ### Searching Moods
 
 1. Click the search icon
-2. Enter date in DD-MM-YYYY format
+2. Enter date in YYYY-MM-D format
 3. View results instantly
 
 ### Calendar Navigation
